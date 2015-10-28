@@ -3,4 +3,5 @@ Rails.application.routes.draw do
   get 'heartbeat' => 'heartbeat#index'
 
   root 'welcome#index'
+  resources :characters
 end

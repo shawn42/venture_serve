@@ -6,14 +6,9 @@ class ApiController < ApplicationController
 
   private
 
-    def current_organization
-      @current_organization ||= current_user.organizations.where(id: @current_organization_id).first if current_user
-    end
-
     def authenticate_user_from_token!
       authenticate_with_http_token do |token, options|
         user_email = options[:email].presence
-        @current_organization_id = options[:org_id].presence
         user       = user_email && User.find_for_authentication(email: user_email)
 
         if user && Devise.secure_compare(user.authentication_token, token)
