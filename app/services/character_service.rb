@@ -29,7 +29,7 @@ class CharacterService
   def destroy(context)
     id, updates, user = context.values_at :id, :character, :current_user
     char = user.characters.where(id: id).first
-    if char
+    if char.destroy
       deleted(char)
     else
       not_found()
