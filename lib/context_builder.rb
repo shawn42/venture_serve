@@ -15,7 +15,7 @@ class ContextBuilder
 
     info = {character: params.require(:character).permit(
       :name,
-      :class,
+      :character_class,
 
       :level,
       :current_health,
