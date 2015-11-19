@@ -30,7 +30,8 @@ class ContextBuilder
       :wisdom,
       :dexterity,
       :constitution,
-      :charisma
+      :charisma,
+      :x, :y
       )}
     user_and_id(context_params).merge(info).with_indifferent_access
   end
