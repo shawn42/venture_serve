@@ -9,6 +9,10 @@ class ContextBuilder
     user(context_params).merge(id: context_params[:params][:id]).with_indifferent_access
   end
 
+  def user_and_character(context_params)
+    user(context_params).merge(character_id: context_params[:params][:character_id]).with_indifferent_access
+  end
+
 
   def character(context_params)
     params = context_params[:params]

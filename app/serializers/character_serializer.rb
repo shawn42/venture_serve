@@ -12,5 +12,8 @@ class CharacterSerializer < ActiveModel::Serializer
     :wisdom,
     :dexterity,
     :constitution,
-    :charisma
+    :charisma,
+    :x,
+    :y
+
 end

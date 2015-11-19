@@ -4,4 +4,5 @@ Rails.application.routes.draw do
 
   root 'welcome#index'
   resources :characters
+  resources :world_views
 end

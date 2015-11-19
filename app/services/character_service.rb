@@ -6,6 +6,16 @@ class CharacterService
     ok(batts)
   end
 
+  def find(context)
+    id, user = context.values_at :id, :current_user
+    char = user.characters.where(id: id).first
+    if char
+      ok(char)
+    else
+      not_found(char)
+    end
+  end
+
   def update(context)
     id, updates, user = context.values_at :id, :character, :current_user
     char = user.characters.where(id: id).first
